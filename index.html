@@ -2,8 +2,24 @@
 
 </head>
 <body>
-  <h1>Test</h1>
+  <h1>Electron Test</h1>
+  <textarea id="text"></textarea>
+  <button id="button">Send Message</button>
+  <h2>Received Message</h2>
+  <pre id="message">
+  </pre>
   <script>
     const { ipcRenderer } = require('electron');
+
+    // send message to Electron
+    document.querySelector('#button').addEventListener('click', () => {
+      ipcRenderer.send('noun:verb', document.querySelector('#text').value);
+      document.querySelector('#text').value = "";
+    });
+
+    // Receive message from Electron
+    ipcRenderer.on('noun:verb2', (event, message) => {
+      document.querySelector('#message').innerHTML = message;
+    });
   </script>
 </body>

@@ -31,6 +31,8 @@ used on the web store in the BrowserWindow process.
 
 Allows different processes to communicate between each other.
 
+IPC Renderer sends message to Electron app and IPC Main receives the message. Electron sends message back to front-end and the front-end receives it with the IPC Renderer.
+
 ## Issues
 
 You will likely need to run electron as sudo if the module does not have proper permissions.
