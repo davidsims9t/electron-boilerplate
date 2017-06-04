@@ -4,7 +4,7 @@
   "description": "A simple boilerplate for Electron Apps.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/davidsims9t/electron-boilerplate#readme",
   "dependencies": {
-    "electron": "^1.6.10"
+    "electron": "1.6.10"
   }
 }
