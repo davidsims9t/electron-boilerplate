@@ -18,6 +18,10 @@ A simple boilerplate and notes about creating Electron Apps.
 Uses event based programming (i.e. listens to life cycle).
 You have to create separate windows to communicate content to users.
 
+## Browser Windows
+
+Spawns a browser window. Completely separate from app process.
+
 ## Issues
 
 You will likely need to run electron as sudo if the module does not have proper permissions.
