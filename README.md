@@ -20,7 +20,16 @@ You have to create separate windows to communicate content to users.
 
 ## Browser Windows
 
-Spawns a browser window. Completely separate from app process.
+Spawns a browser window. Completely separate from app process. Has access to CommonJS require as well fs, crypto, etc.
+
+## Separation of Concerns
+
+Anything related to the operating system use the Electron app process. Anything that can be
+used on the web store in the BrowserWindow process.
+
+## IPC System - Interprocess Communication
+
+Allows different processes to communicate between each other.
 
 ## Issues
 
