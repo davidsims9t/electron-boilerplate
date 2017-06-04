@@ -1,0 +1,25 @@
+{
+  "name": "@dsims9t/electron_testproj",
+  "version": "1.0.0",
+  "description": "A simple boilerplate for Electron Apps.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidsims9t/electron-boilerplate.git"
+  },
+  "keywords": [
+    "electron"
+  ],
+  "author": "David Sims",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidsims9t/electron-boilerplate/issues"
+  },
+  "homepage": "https://github.com/davidsims9t/electron-boilerplate#readme",
+  "dependencies": {
+    "electron": "^1.6.10"
+  }
+}
