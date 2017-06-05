@@ -10,10 +10,13 @@
   </form>
 
   <script>
+    const { ipcRenderer } = require('electron');
+
     document.querySelector('form').addEventListener('submit', event => {
       event.preventDefault();
 
-      
+      const { value } = document.querySelector('input');
+      ipcRenderer.send('noun:verb3', value);
     });
   </script>
 </body>

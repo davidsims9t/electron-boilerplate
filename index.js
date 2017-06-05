@@ -11,6 +11,7 @@ const createAddWindow = () => {
   });
 
   addWindow.loadURL(`file://${__dirname}/add.html`);
+  addWindow.on('closed', () => addWindow = null);
 };
 
 const menuTemplate = [
@@ -71,4 +72,9 @@ app.on('ready', () => {
 ipcMain.on('noun:verb', (event, message) => {
   // sends message back to front-end
   mainWindow.webContents.send('noun:verb2', message);
+});
+
+ipcMain.on('noun:verb3', (event, message) => {
+  mainWindow.webContents.send('noun:verb4', message);
+  addWindow.close();
 });
