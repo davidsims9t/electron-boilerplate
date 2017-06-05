@@ -45,6 +45,10 @@ first menu is the name of the application (i.e. Electron).
 When creating a new window and then closing it, the variable assigned to the browser window object is still
 pointing to the browser window object in memory. The best way to avoid this is to use an event listener to assign the variable to null when closed.
 
+## Roles
+
+Allows you to easily add back Electron functionality that is normally lost from creating custom menus.
+
 ## Issues
 
 - You will likely need to run electron as sudo if the module does not have proper permissions.
