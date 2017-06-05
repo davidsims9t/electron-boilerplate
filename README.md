@@ -42,4 +42,5 @@ first menu is the name of the application (i.e. Electron).
 
 ## Issues
 
-You will likely need to run electron as sudo if the module does not have proper permissions.
+- You will likely need to run electron as sudo if the module does not have proper permissions.
+- If you close out the main window and you have another window open, there's no way to bring it back up without re-opening the app.
