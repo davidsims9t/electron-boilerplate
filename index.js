@@ -39,6 +39,22 @@ if (process.platform === 'darwin') {
   menuTemplate.unshift({});
 }
 
+// Enable developer tools in anything but production
+if (process.env.NODE_ENV !== 'production') {
+  menuTemplate.push({
+    label: 'Developer',
+    submenu: [
+      {
+        label: 'Toggle Developer Tools',
+        accelerator: process.platform === 'darwin' ? 'Command+Alt+I' : 'Ctrl+Shift+I',
+        click(item, focusedWindow) {
+          focusedWindow.toggleDevTools();
+        }
+      }
+    ]
+  });
+}
+
 app.on('ready', () => {
   // spawns new browser window
   mainWindow = new BrowserWindow({});
