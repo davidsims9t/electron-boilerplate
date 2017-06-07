@@ -54,6 +54,13 @@ Allows you to easily add back Electron functionality that is normally lost from 
 A system tray is something that displays in the operating system right hand bar.
 All trays must have an icon and are specific to the operating system.
 
+### Bounds
+
+Used to tell where the click event occurs and the window size. The click event bounds are
+the x and the y offset and the window bounds are the x and y window size (width and height).
+
+To get the x offset use the click event bound minus half of the window x bound. The y bound is the y click bound.
+
 ## Issues
 
 - You will likely need to run electron as sudo if the module does not have proper permissions.
