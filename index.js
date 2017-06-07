@@ -80,9 +80,16 @@ app.on('ready', () => {
   tray = new Tray(iconPath);
 
   tray.on('click', (event, bounds) => {
-    if (mainWindow.isVisible) {
+    // Window width and height
+    const { width, height } = mainWindow.getBounds();
+
+    if (mainWindow.isVisible()) {
       mainWindow.hide();
     } else {
+      const x = bounds.x - width / 2;
+      const y = bounds.y;
+
+      mainWindow.setBounds({x, y, width, height});
       mainWindow.show();
     }
   });
