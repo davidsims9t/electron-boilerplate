@@ -2,6 +2,7 @@ const { app, BrowserWindow, ipcMain, Menu, Tray } = require('electron');
 
 let mainWindow;
 let addWindow;
+let tray;
 
 const createAddWindow = () => {
   addWindow = new BrowserWindow({
@@ -59,7 +60,13 @@ if (process.env.NODE_ENV !== 'production') {
 
 app.on('ready', () => {
   // spawns new browser window
-  mainWindow = new BrowserWindow({});
+  mainWindow = new BrowserWindow({
+    width: 300,
+    height: 500,
+    frame: false,
+    resizable: false,
+    show: false
+  });
   mainWindow.loadURL(`file://${__dirname}/src/index.html`);
   mainWindow.on('closed', () => app.quit());
 
@@ -68,9 +75,13 @@ app.on('ready', () => {
   // Can use this method to change the menu throughout the application.
   Menu.setApplicationMenu(mainMenu);
 
-  const iconName === 'win32' ? 'windows-icon.png' : 'icon-template.png';
+  const iconName = process.platform === 'win32' ? 'windows-icon.png' : 'iconTemplate.png';
   const iconPath = `${__dirname}/src/assets/${iconName}`;
-  new Tray(iconPath);
+  tray = new Tray(iconPath);
+
+  tray.on('click', () => {
+    mainWindow.show();
+  });
 });
 
 // listens to event from front-end
