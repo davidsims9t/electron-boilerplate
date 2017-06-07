@@ -10,7 +10,7 @@ const createAddWindow = () => {
     title: 'Add New Todo'
   });
 
-  addWindow.loadURL(`file://${__dirname}/add.html`);
+  addWindow.loadURL(`file://${__dirname}/src/add.html`);
   addWindow.on('closed', () => addWindow = null);
 };
 
@@ -60,7 +60,7 @@ if (process.env.NODE_ENV !== 'production') {
 app.on('ready', () => {
   // spawns new browser window
   mainWindow = new BrowserWindow({});
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
+  mainWindow.loadURL(`file://${__dirname}/src/index.html`);
   mainWindow.on('closed', () => app.quit());
 
   const mainMenu = Menu.buildFromTemplate(menuTemplate);
