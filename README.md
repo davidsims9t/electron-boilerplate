@@ -49,10 +49,10 @@ pointing to the browser window object in memory. The best way to avoid this is t
 
 Allows you to easily add back Electron functionality that is normally lost from creating custom menus.
 
-## Trays
+## System Tray
 
-A tray is something that displays in the operating system right hand bar.
-All trays must have an icon.
+A system tray is something that displays in the operating system right hand bar.
+All trays must have an icon and are specific to the operating system.
 
 ## Issues
 
