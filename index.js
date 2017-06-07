@@ -87,7 +87,7 @@ app.on('ready', () => {
       mainWindow.hide();
     } else {
       const x = bounds.x - width / 2;
-      const y = bounds.y;
+      const y = process.platform === 'darwin' ? bounds.y : bounds.y - height;
 
       mainWindow.setBounds({x, y, width, height});
       mainWindow.show();
