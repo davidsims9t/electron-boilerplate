@@ -49,6 +49,11 @@ pointing to the browser window object in memory. The best way to avoid this is t
 
 Allows you to easily add back Electron functionality that is normally lost from creating custom menus.
 
+## Trays
+
+A tray is something that displays in the operating system right hand bar.
+All trays must have an icon.
+
 ## Issues
 
 - You will likely need to run electron as sudo if the module does not have proper permissions.

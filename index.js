@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, Menu } = require('electron');
+const { app, BrowserWindow, ipcMain, Menu, Tray } = require('electron');
 
 let mainWindow;
 let addWindow;
@@ -67,6 +67,10 @@ app.on('ready', () => {
 
   // Can use this method to change the menu throughout the application.
   Menu.setApplicationMenu(mainMenu);
+
+  const iconName === 'win32' ? 'windows-icon.png' : 'icon-template.png';
+  const iconPath = `${__dirname}/src/assets/${iconName}`;
+  new Tray(iconPath);
 });
 
 // listens to event from front-end
