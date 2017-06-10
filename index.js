@@ -1,4 +1,5 @@
 const { app, BrowserWindow, ipcMain, Menu, Tray } = require('electron');
+const TimerTray = require('./src/app/TimerTray');
 
 let mainWindow;
 let addWindow;
@@ -77,22 +78,8 @@ app.on('ready', () => {
 
   const iconName = process.platform === 'win32' ? 'windows-icon.png' : 'iconTemplate.png';
   const iconPath = `${__dirname}/src/assets/${iconName}`;
-  tray = new Tray(iconPath);
 
-  tray.on('click', (event, bounds) => {
-    // Window width and height
-    const { width, height } = mainWindow.getBounds();
-
-    if (mainWindow.isVisible()) {
-      mainWindow.hide();
-    } else {
-      const x = bounds.x - width / 2;
-      const y = process.platform === 'darwin' ? bounds.y : bounds.y - height;
-
-      mainWindow.setBounds({x, y, width, height});
-      mainWindow.show();
-    }
-  });
+  tray = new TimerTray(iconPath, mainWindow);
 });
 
 // listens to event from front-end
