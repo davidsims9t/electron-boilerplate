@@ -22,6 +22,8 @@ You have to create separate windows to communicate content to users.
 
 Spawns a browser window. Completely separate from app process. Has access to CommonJS require as well fs, crypto, etc.
 
+Use webPreferences: { backgroundThrottling: false }, allows the app to run at full speed when the app is not in the focused state. Useful if you're displaying content in the tray like a timer.
+
 ## Separation of Concerns
 
 Anything related to the operating system use the Electron app process. Anything that can be

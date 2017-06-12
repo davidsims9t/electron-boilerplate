@@ -12,7 +12,7 @@ app.on('ready', () => {
   app.dock.hide();
 
   // spawns new browser window
-  mainWindow = new MainWindow();
+  mainWindow = new MainWindow(app);
   mainWindow.loadURL(`file://${__dirname}/src/index.html`);
 
   const mainMenu = Menu.buildFromTemplate(menuTemplate);
@@ -24,6 +24,7 @@ app.on('ready', () => {
   const iconPath = `${__dirname}/src/assets/${iconName}`;
 
   tray = new TimerTray(iconPath, mainWindow);
+  tray.setTitle('Test');
 });
 
 // listens to event from front-end
