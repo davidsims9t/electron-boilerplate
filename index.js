@@ -70,6 +70,9 @@ app.on('ready', () => {
   });
   mainWindow.loadURL(`file://${__dirname}/src/index.html`);
   mainWindow.on('closed', () => app.quit());
+  mainWindow.on('blur', () => {
+    mainWindow.hide();
+  });
 
   const mainMenu = Menu.buildFromTemplate(menuTemplate);
 
