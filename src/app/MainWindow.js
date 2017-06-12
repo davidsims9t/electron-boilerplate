@@ -22,7 +22,7 @@ class MainWindow extends BrowserWindow {
   }
 
   onClose() {
-    app.quit()
+    this.app.quit()
   }
 }
 
