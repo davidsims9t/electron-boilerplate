@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Root = () => {
-  return <div></div>
+const Root = ({ children }) => {
+  return <div>{children}</div>
 };
 
 ReactDOM.render(
