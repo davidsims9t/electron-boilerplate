@@ -1,4 +1,4 @@
-const { app, ipcMain, Menu } = require('electron');
+const { app, ipcMain, Menu, shell } = require('electron');
 const TimerTray = require('./src/app/TimerTray');
 const MainWindow = require('./src/app/MainWindow');
 const menuTemplate = require('./src/app/menuTemplate');
@@ -31,6 +31,9 @@ app.on('ready', () => {
 ipcMain.on('noun:verb', (event, message) => {
   // sends message back to front-end
   mainWindow.webContents.send('noun:verb2', message);
+
+  // opens a folder
+  // shell.showItemInFolder(path);
 });
 
 ipcMain.on('noun:verb3', (event, message) => {
