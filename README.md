@@ -63,6 +63,10 @@ the x and the y offset and the window bounds are the x and y window size (width 
 
 To get the x offset use the click event bound minus half of the window x bound. The y bound is the y click bound.
 
+## Using Electron with React/Redux
+
+When combining Electron, React, and Redux, handling communication between React and Electron should be located in your action creators.
+
 ## Issues
 
 - You will likely need to run electron as sudo if the module does not have proper permissions.
