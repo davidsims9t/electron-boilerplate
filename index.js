@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, Menu, Tray } = require('electron');
+const { app, ipcMain, Menu } = require('electron');
 const TimerTray = require('./src/app/TimerTray');
 const MainWindow = require('./src/app/MainWindow');
 const menuTemplate = require('./src/app/menuTemplate');
@@ -12,7 +12,7 @@ app.on('ready', () => {
   app.dock.hide();
 
   // spawns new browser window
-  mainWindow = new MainWindow(app);
+  mainWindow = new MainWindow();
   mainWindow.loadURL(`file://${__dirname}/src/index.html`);
 
   const mainMenu = Menu.buildFromTemplate(menuTemplate);

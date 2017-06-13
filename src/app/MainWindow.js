@@ -1,7 +1,7 @@
-const { BrowserWindow } = require('electron');
+const { BrowserWindow, app } = require('electron');
 
 class MainWindow extends BrowserWindow {
-  constructor(app) {
+  constructor() {
     super({
       width: 300,
       height: 500,
@@ -10,8 +10,6 @@ class MainWindow extends BrowserWindow {
       show: false,
       webPreferences: { backgroundThrottling: false }
     });
-
-    this.app = app;
 
     this.on('closed', this.onClose.bind(this));
     this.on('blur', this.onBlur.bind(this));
@@ -22,7 +20,7 @@ class MainWindow extends BrowserWindow {
   }
 
   onClose() {
-    this.app.quit()
+    app.quit()
   }
 }
 
